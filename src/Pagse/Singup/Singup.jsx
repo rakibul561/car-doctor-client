@@ -1,23 +1,28 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
-const Login = () => {
 
-    const handleLogin = event =>{
+const Singup = () => {
+
+    const handleSingup = event =>{
         event.preventDefault();
     }
 
-
-
-
+    
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="w-1/2 mr-20">
-                    <img src= {img} alt="" />
+                    <img src={img} alt="" />
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleLogin} className="card-body">
-                    <h1 className="text-3xl font-bold text-center">Login</h1>
+                    <form onSubmit={handleSingup} className="card-body">
+                        <h1 className="text-3xl font-bold text-center">Sing up</h1>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -34,14 +39,14 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className='btn btn-primary' type="submit" value="Login" />
+                            <input className='btn btn-primary' type="submit" value="Sing up" />
                         </div>
                     </form>
-                    <p className='text-center my-4'>New to car Doctors <Link className='text-orange-600 font-bold' to= '/signup'>Singup</Link></p>
+                    <p className='text-center my-4'>Already have an account <Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Singup;
