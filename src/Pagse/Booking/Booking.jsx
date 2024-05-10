@@ -8,11 +8,11 @@ const Booking = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `http://localhost:5000/bookings?email=test@car.com`
 
     useEffect(() => {
 
-       axios.get(url, {withCredentials: true})
+       axios.get(url, {withCredentials:'include'})
        .then(res =>{
         setBookings(res.data)
        })
